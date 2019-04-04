@@ -1,6 +1,5 @@
 // create your App component here
 import React, { Component } from 'react'
-// import { Person } from './person'
 
 
 export default class App extends Component{
@@ -13,7 +12,7 @@ export default class App extends Component{
     }
 
     componentDidMount(){
-        const url = `http://api.open-notify.org/astros.json`
+        var url = `http://api.open-notify.org/astros.json`
 
         fetch(url)
         .then(res => {
@@ -24,9 +23,7 @@ export default class App extends Component{
             const {people, number, message } = data
             this.setState({ people })
         })
-        .catch(e => {
-            alert(e)
-        })
+        .catch(error => console.error('Error:', error));
 
     }
 
