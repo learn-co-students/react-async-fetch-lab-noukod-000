@@ -28,13 +28,13 @@ export default class App extends Component{
     }
 
 
-    constructPeople = () => this.state.people.map(p => <Person name={p.name} craft={p.craft}/>)
+    People = () => this.state.people.map(p => <Person name={p.name} craft={p.craft}/>)
 
     render(){
 
         return(
             <div className="PeopleContainer">
-                {this.constructPeople()}
+                {this.People()}
             </div>
             
         )
