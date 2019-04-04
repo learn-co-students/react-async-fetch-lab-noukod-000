@@ -15,10 +15,7 @@ export default class App extends Component{
         var url = `http://api.open-notify.org/astros.json`
 
         fetch(url)
-        .then(res => {
-            if(!res.ok) throw res.statusText
-            return res.json()
-        })
+        .then(res => res.json())
         .then(data => {
             const {people, number, message } = data
             this.setState({ people })
@@ -28,7 +25,7 @@ export default class App extends Component{
     }
 
 
-    People = () => this.state.people.map(p => <Person name={p.name} craft={p.craft}/>)
+    People = () => this.state.people.map(person => <Person name={person.name} craft={person.craft}/>)
 
     render(){
 
